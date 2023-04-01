@@ -1,6 +1,6 @@
 {
   "branches": "master",
-  "repositoryUrl": "https://github.com/michael616kriel/kult-graphql",
+  "repositoryUrl": "https://github.com/michael616kriel/kult-cms",
   "debug": "false",
   "plugins": [
     [
@@ -44,7 +44,8 @@
       "@semantic-release/github",
       {
         "assets": [
-          "build/**"
+          "build/**",
+          "client/build/**"
         ]
       }
     ]
