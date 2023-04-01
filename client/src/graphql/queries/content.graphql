@@ -1,0 +1,47 @@
+query getContentItem($input: ContentTypeInput) {
+  getContentItem(input: $input) {
+    name
+    fields {
+      name
+      value
+      type
+    }
+  }
+}
+
+query getContent($input: ContentTypeInput) {
+  getContent(input: $input) {
+    name
+    fields {
+      name
+      value
+      type
+    }
+  }
+}
+
+query getContent($input: ContentTypeInput) {
+  getContent(input: $input) {
+    name
+    fields {
+      name
+      value
+      type
+    }
+  }
+}
+mutation createContent($input: ContentTypeCreateInput!) {
+  createContent(input: $input) {
+    name
+  }
+}
+mutation updateContent($input: ContentTypeUpdateInput!) {
+  updateContent(input: $input) {
+    name
+  }
+}
+mutation removeContent($input: ContentTypeRemoveInput!) {
+  removeContent(input: $input) {
+    name
+  }
+}

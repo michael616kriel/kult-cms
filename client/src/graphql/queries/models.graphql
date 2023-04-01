@@ -1,0 +1,29 @@
+query getModels {
+  getModels {
+    name
+    columns {
+      name
+      type
+      default
+      length
+      relationType
+      relationCollection
+    }
+  }
+}
+
+mutation createModel($model: ModelInput!) {
+  createModel(model: $model) {
+    name
+  }
+}
+mutation updateModel($model: ModelInput!) {
+  updateModel(model: $model) {
+    name
+  }
+}
+mutation removeModel($model: ModelInput!) {
+  removeModel(model: $model) {
+    name
+  }
+}

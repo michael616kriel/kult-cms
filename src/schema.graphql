@@ -1,0 +1,79 @@
+type Model {
+  name: String
+  columns: [ModelColumn]
+}
+
+type ModelColumn {
+  type: String
+  name: String
+  default: String
+  length: Int
+  relationType: String
+  relationCollection: String
+}
+
+input ModelInput {
+  name: String
+  columns: [ModelColumnInput]
+}
+
+input ModelColumnInput {
+  type: String
+  name: String
+  default: String
+  length: Int
+  relationType: String
+  relationCollection: String
+}
+
+type ContentType {
+  name: String
+  fields: [ContentTypeFields]
+}
+
+type ContentTypeFields {
+  name: String
+  type: String
+  value: String
+}
+
+input ContentTypeInput {
+  name: String
+  where: [ContentKeyValueInput]
+}
+
+input ContentKeyValueInput {
+  key: String
+  value: String
+}
+
+input ContentTypeUpdateInput {
+  id: Int
+  name: String
+  fields: [ContentKeyValueInput]
+}
+
+input ContentTypeCreateInput {
+  name: String
+  fields: [ContentKeyValueInput]
+}
+
+input ContentTypeRemoveInput {
+  id: Int
+  name: String
+}
+
+type Query {
+  getModels: [Model]
+  getContentItem(input: ContentTypeInput): ContentType
+  getContent(input: ContentTypeInput): [ContentType]
+}
+
+type Mutation {
+  createModel(model: ModelInput!): Model
+  updateModel(model: ModelInput!): Model
+  removeModel(model: ModelInput!): Model
+  createContent(input: ContentTypeCreateInput!): ContentType
+  updateContent(input: ContentTypeUpdateInput!): ContentType
+  removeContent(input: ContentTypeRemoveInput!): ContentType
+}

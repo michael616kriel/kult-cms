@@ -1,0 +1,49 @@
+{
+  "name": "@kult/cms",
+  "version": "0.0.0",
+  "description": "",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "copy-models": "copyfiles -u 1 src/**/*.json src/**/**/*.json build/",
+    "copy-schemas": "copyfiles -u 1 src/**/*.graphql src/**/**/*.graphql build/",
+    "build": "rimraf ./build && tsc && yarn copy-models && yarn copy-schemas",
+    "tsc": "tsc -p tsconfig.json && tsc-alias",
+    "start": "npm run build && node build/index.js",
+    "dev": "npx nodemon -e ts --watch src --exec \"yarn build\"",
+    "lint": "eslint . --ext .ts",
+    "lint-and-fix": "eslint . --ext .ts --fix",
+    "npm-publish": "npm version patch && npm publish --access public",
+    "semantic-release": "semantic-release"
+  },
+  "keywords": [],
+  "author": "Michael Kriel <michael616kriel@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/koa": "^2.13.5",
+    "@types/koa-mount": "^4.0.2",
+    "@types/koa-static": "^4.0.2",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.32.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-plugin-import": "^2.27.5",
+    "nodemon": "^2.0.20",
+    "rimraf": "^4.1.1",
+    "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.2",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.191",
+    "koa": "^2.14.1",
+    "koa-mount": "^4.0.0",
+    "koa-static": "^5.0.0",
+    "lodash": "^4.17.21",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.11"
+  }
+}
