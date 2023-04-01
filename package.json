@@ -4,6 +4,10 @@
   "description": "",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "files": [
+    "build/",
+    "client/build"
+  ],
   "scripts": {
     "copy-models": "copyfiles -u 1 src/**/*.json src/**/**/*.json build/",
     "copy-schemas": "copyfiles -u 1 src/**/*.graphql src/**/**/*.graphql build/",
