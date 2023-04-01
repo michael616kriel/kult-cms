@@ -1,6 +1,6 @@
 {
   "name": "@kult/cms",
-  "version": "0.0.0",
+  "version": "0.0.0-semantically-released",
   "description": "",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -20,6 +20,7 @@
   "author": "Michael Kriel <michael616kriel@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@semantic-release/npm": "^9.0.2",
     "@types/koa": "^2.13.5",
     "@types/koa-mount": "^4.0.2",
     "@types/koa-static": "^4.0.2",
