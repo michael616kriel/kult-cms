@@ -1,6 +1,5 @@
 {
   "name": "@kult/cms",
-  "version": "0.0.0-semantically-released",
   "description": "",
   "main": "build/index.js",
   "types": "build/index.d.ts",
